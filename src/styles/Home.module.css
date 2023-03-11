@@ -1,19 +1,22 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
 }
-
+.main h2 {
+  color: yellowgreen
+}
 .description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
+  display: flex;
+  justify-content:center;
+  align-items: center;
   font-size: 0.85rem;
   max-width: var(--max-width);
   width: 100%;
+  margin-top: 35px;
   z-index: 2;
   font-family: var(--font-mono);
 }
@@ -25,11 +28,12 @@
   gap: 0.5rem;
 }
 
-.description p {
+.description h1 {
   position: relative;
+  font-family: cursive;
   margin: 0;
   padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
+  background-color: darkblue;
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
 }
@@ -205,6 +209,7 @@
 
   .description {
     font-size: 0.8rem;
+    
   }
 
   .description a {
