@@ -1,17 +1,41 @@
-import Link from 'next/link'
-import React from 'react'
-import styles from "./Navbar.module.css";
-import {ActiveLink} from './ActiveLink';
+import { ActiveLink } from './ActiveLink';
+import styles from './Navbar.module.css';
 
+const menuItems = [
+  {
+      text: 'Home',
+      href: '/'
+  },
+  {
+      text: 'About',
+      href: '/about'
+  },
+  {
+      text: 'Contact',
+      href: '/contact'
+  },
+  {
+      text: 'Pricing',
+      href: '/pricing'
+  },
+];
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
-    <nav className={styles['main-container']}>
-        <ActiveLink text="Home" href='/' /> 
-        <ActiveLink text="About" href='/about' />
-        <ActiveLink text="Contacto" href='/contact' />
-    </nav>
-  )
-}
+    <nav className={ styles['menu-container'] }>
+        {
+          menuItems.map( ({ text, href }) => (
+            <ActiveLink key={ href } text={ text } href={ href } />    
+          ))
 
-export default Navbar
+        }
+
+        {/* 
+        <ActiveLink text="Home" href="/" />
+        <ActiveLink text="About" href="/about" />
+        <ActiveLink text="Contact" href="/contact" /> 
+        <ActiveLink text="Pricing" href="/pricing" />  
+        */}
+    </nav>
+  );
+};

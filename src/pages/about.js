@@ -1,37 +1,33 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/About.module.css'
 import Link from 'next/link'
-import Navbar from '@/components/Navbar'
 
-const inter = Inter({ subsets: ['latin'] })
+import { DarkLayout } from '../components/layouts/DarkLayout'
+import { MainLayout } from '../components/layouts/MainLayout'
 
-export default function About() {
+
+export default function AboutPage() {
   return (
     <>
-      <Head>
-        <title>My Next App/ About</title>
-        <meta name="description" content="About Page" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Navbar />
-      <main className={styles.main}>
-           <h2>About Page</h2> 
-        <div className={styles.description}>
-          <h1>
-            Ir a :
-            <Link href='/'>Home Page</Link>
-          </h1>
-        </div>
-        <div className={styles.description}>
-          <h1>
-            Ir a :
-            <Link href='/contact'>Contact Page</Link>
-          </h1>
-        </div>
-      </main>
+        <h1>About Page</h1>
+        
+        <h1 className={'title'}>
+          Ir a <Link href="/">Home</Link>
+        </h1>
+
+        <p className={'description'}>
+          Get started by editing{' '}
+          <code className={'code'}>pages/about.jsx</code>
+        </p>
     </>
+  )
+}
+
+
+AboutPage.getLayout = function getLayout( page ) {
+  return (
+    <MainLayout>
+      <DarkLayout>
+       { page }
+      </DarkLayout>
+    </MainLayout>
   )
 }
